@@ -12,7 +12,7 @@ const Hero = () => (
         transition={{ duration: 1.2 }}
       >
         <img
-          src="https://via.placeholder.com/300"
+          src="../assets/passport 100kb.jpg"
           alt="Your Avatar"
           className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-yellow-400 shadow-lg"
         />
