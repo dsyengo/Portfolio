@@ -10,7 +10,7 @@ const Header = () => (
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        My Portfolio
+        Master Chief
       </motion.h1>
       <AiOutlineMenu className="text-2xl md:hidden cursor-pointer" />
       <nav className="hidden md:flex space-x-6">

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaArrowDown } from 'react-icons/fa';
+import logo from '../assets/passport 100kb.jpg'
 
 const Hero = () => (
   <section id="home" className="bg-gray-900 text-white min-h-screen flex items-center">
@@ -12,9 +13,10 @@ const Hero = () => (
         transition={{ duration: 1.2 }}
       >
         <img
-          src="../assets/passport 100kb.jpg"
-          alt="Your Avatar"
-          className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-yellow-400 shadow-lg"
+          src={logo}
+          alt="Denis Syengo"
+          // className="w-full lg:w-1/2 lg:p-8 flex justify-center"
+           className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-yellow-400 shadow-lg"
         />
       </motion.div>
 
@@ -26,17 +28,17 @@ const Hero = () => (
         transition={{ duration: 1 }}
       >
         <motion.h1
-          className="text-4xl font-bold"
+          className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          Hello, I'm Denis Syengo
+        Denis Syengo
         </motion.h1>
-        <p className="text-lg mt-2">
+        <p className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent">
           Backend Developer | Cybersecurity Specialist | AI/ML Enthusiast
         </p>
-        <p className="mt-4 text-gray-300">
+        <p className="mt-4 text-gray-300 tracking-tighter">
           Nicknamed "<span className="text-yellow-400">Master Chief</span>" after the legendary **Halo** character John-117, I bring precision and strategy to every challenge I face in tech. Whether it's building secure backend systems, exploring AI innovations, or enhancing cybersecurity, I approach each task with a warrior's discipline. 
           <br />
           Outside of tech, I’m a **chorister** and choir trainer, blending my passion for technology with the harmony of music.

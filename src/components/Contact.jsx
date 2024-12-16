@@ -10,9 +10,9 @@ const Contact = () => (
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        Contact Me
+        Get In Touch
       </motion.h2>
-      <p className="text-gray-600 mt-4">
+      <p className="text-gray-600 my-4tracking-tighter">
         Feel free to reach out via email or connect with me on social media.
       </p>
 
