@@ -33,7 +33,7 @@ const Hero = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <img
-                  src="/placeholder.svg?height=320&width=320"
+                  src="/assets/dean.jpg"
                   alt="Denis Syengo"
                   className="w-full h-full object-cover"
                 />
