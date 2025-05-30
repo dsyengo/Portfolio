@@ -1,30 +1,41 @@
-import { motion } from 'framer-motion';
-import { FaCode, FaDatabase, FaReact, FaPython, FaNodeJs } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import {
+  FaCode,
+  FaDatabase,
+  FaReact,
+  FaPython,
+  FaNodeJs,
+} from "react-icons/fa";
 
 const skills = [
   {
-    title: 'JavaScript (Node.js)',
-    description: 'Expert in building scalable backend solutions with Node.js.',
+    title: "JavaScript (Node.js)",
+    description:
+      "Advanced backend development using Node.js to build scalable, secure, and high-performance APIs.",
     icon: <FaNodeJs className="text-yellow-500 text-5xl" />,
   },
   {
-    title: 'MERN Stack',
-    description: 'Proficient in developing full-stack applications with MongoDB, Express, React, and Node.js.',
+    title: "MERN Stack",
+    description:
+      "Proficient in building end-to-end web applications with MongoDB, Express, React, and Node.js.",
     icon: <FaReact className="text-blue-500 text-5xl" />,
   },
   {
-    title: 'Python',
-    description: 'Skilled in Python programming for data analysis and backend development.',
+    title: "Python",
+    description:
+      "Applied Python for automation, scripting, and data-driven backend tasks.",
     icon: <FaPython className="text-green-500 text-5xl" />,
   },
   {
-    title: 'Databases',
-    description: 'Experienced with relational and non-relational databases like MySQL and MongoDB.',
+    title: "Databases",
+    description:
+      "Skilled in designing and managing both SQL (MySQL) and NoSQL (MongoDB) databases.",
     icon: <FaDatabase className="text-red-500 text-5xl" />,
   },
   {
-    title: 'Version Control (Git)',
-    description: 'Experienced in managing codebases and collaboration using Git and GitHub.',
+    title: "Version Control (Git)",
+    description:
+      "Proficient in Git for source control, team collaboration, and maintaining clean development workflows.",
     icon: <FaCode className="text-gray-600 text-5xl" />,
   },
 ];
@@ -54,7 +65,9 @@ const Skills = () => (
             }}
           >
             <div className="mb-6 flex justify-center">{skill.icon}</div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">{skill.title}</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+              {skill.title}
+            </h3>
             <p className="text-gray-600">{skill.description}</p>
           </motion.div>
         ))}

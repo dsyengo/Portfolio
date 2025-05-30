@@ -1,31 +1,25 @@
-import { motion } from 'framer-motion';
-import { FaAward } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaAward } from "react-icons/fa";
 
 const Achievements = () => {
   const achievements = [
     {
-      title: 'CompTIA Security+ Certification',
+      title: "Huawei ICT Competition 2024-2025 Global Finalist",
       description:
-        'Earned recognition for foundational cybersecurity knowledge and skills.',
-      year: '2023',
+        "Earned a Third Prize in the Huawe ICT Competition 2024-2025 in the Innovation Track alongside my teammates, with our Smart Air Quality Monitoring System leveraging the power of AI and IoTDA.",
+      year: "2025",
     },
     {
-      title: 'Certified Ethical Hacker (CEH)',
+      title: "Certified in Cybersecurity (CC) ISC2",
       description:
-        'Certified in ethical hacking practices to identify and mitigate vulnerabilities.',
-      year: '2024',
+        "Certified in Cybersecurity Principles, Access Control, Network Security, Risk Management, Business Continuity & Disaster Recovery.",
+      year: "2024",
     },
     {
-      title: 'TensorFlow Developer Certification',
+      title: "Winner - Hackathon 2022",
       description:
-        'Proven expertise in building and deploying AI/ML models using TensorFlow.',
-      year: '2023',
-    },
-    {
-      title: 'Winner - Hackathon 2022',
-      description:
-        'Developed a cybersecurity solution that won 1st place in a national hackathon.',
-      year: '2022',
+        "Developed a cybersecurity solution that won 1st place in a national hackathon.",
+      year: "2022",
     },
   ];
 

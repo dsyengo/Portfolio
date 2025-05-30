@@ -1,11 +1,17 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaFacebook } from 'react-icons/fa';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaWhatsapp,
+  FaFacebook,
+} from "react-icons/fa";
 
 const Footer = () => (
   <footer className="bg-gray-800 text-white py-8">
     <div className="container mx-auto px-6">
       {/* Navigation Links */}
       <div className="flex justify-center space-x-6 mb-4">
-        {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+        {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
@@ -19,7 +25,7 @@ const Footer = () => (
       {/* Social Media Icons */}
       <div className="flex justify-center space-x-6 mb-4">
         <a
-          href="https://github.com/your-profile"
+          href="https://github.com/dsyengo"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-yellow-400 transition-colors"
@@ -27,7 +33,7 @@ const Footer = () => (
           <FaGithub size={20} />
         </a>
         <a
-          href="https://linkedin.com/in/your-profile"
+          href="www.linkedin.com/in/dsyengo"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-yellow-400 transition-colors"
@@ -43,7 +49,7 @@ const Footer = () => (
           <FaTwitter size={20} />
         </a>
         <a
-          href="https://wa.me/your-phone-number"
+          href="https://wa.me/+254115014057"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-yellow-400 transition-colors"
@@ -63,11 +69,11 @@ const Footer = () => (
       {/* Copyright */}
       <div className="text-center">
         <p className="text-sm">
-          &copy; {new Date().getFullYear()} My Portfolio. All rights reserved.
+          &copy; {new Date().getFullYear()} Denis Syengo. All rights reserved.
         </p>
         <p className="text-xs text-gray-400 mt-2">
-          Built with <span className="text-yellow-400">React</span>,{' '}
-          <span className="text-yellow-400">Vite</span>, and{' '}
+          Built with <span className="text-yellow-400">React</span>,{" "}
+          <span className="text-yellow-400">Vite</span>, and{" "}
           <span className="text-yellow-400">Tailwind CSS</span>.
         </p>
       </div>

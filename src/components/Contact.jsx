@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => (
   <section id="contact" className="bg-white py-10">
@@ -60,7 +60,7 @@ const Contact = () => (
 
       <div className="flex justify-center space-x-6 mt-8">
         <a
-          href="https://www.linkedin.com"
+          href="www.linkedin.com/in/dsyengo"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-700 text-2xl hover:text-yellow-400 transition-colors"
@@ -68,7 +68,7 @@ const Contact = () => (
           <FaLinkedin />
         </a>
         <a
-          href="https://github.com"
+          href="https://github.com/dsyengp"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-700 text-2xl hover:text-yellow-400 transition-colors"
@@ -76,7 +76,7 @@ const Contact = () => (
           <FaGithub />
         </a>
         <a
-          href="mailto:your.email@example.com"
+          href="mailto:deniswilson028@gmail.com"
           className="text-gray-700 text-2xl hover:text-yellow-400 transition-colors"
         >
           <FaEnvelope />
