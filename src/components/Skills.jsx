@@ -38,18 +38,6 @@ const Skills = () => {
       color: "from-red-500 to-orange-500",
     },
     {
-      title: "AI/ML",
-      icon: <Brain className="h-8 w-8" />,
-      skills: [
-        "Machine Learning",
-        "TensorFlow",
-        "PyTorch",
-        "NLP",
-        "Computer Vision",
-      ],
-      color: "from-indigo-500 to-purple-500",
-    },
-    {
       title: "DevOps & Tools",
       icon: <Cloud className="h-8 w-8" />,
       skills: ["Docker", "AWS", "Git", "CI/CD", "Linux"],

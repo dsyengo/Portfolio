@@ -33,7 +33,7 @@ const Hero = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <img
-                  src="/assets/dean.jpg"
+                  src="/assets/MasterSuit.jpeg"
                   alt="Denis Syengo"
                   className="w-full h-full object-cover"
                 />
@@ -107,7 +107,12 @@ const Hero = () => {
                 <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                 Get In Touch
               </Button>
-              <Button variant="outline" size="lg" className="group">
+              <Button
+                variant="outline"
+                size="lg"
+                className="group"
+                download="../../public/assets/DENIS SYENGO CV.pdf"
+              >
                 <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                 Download CV
               </Button>
