@@ -107,15 +107,15 @@ const Hero = () => {
                 <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                 Get In Touch
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="group"
-                download="../../public/assets/DENIS SYENGO CV.pdf"
+              <a
+                href="/assets/DENIS SYENGO CV.pdf"
+                download="DENIS_SYENGO_CV.pdf"
               >
-                <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                Download CV
-              </Button>
+                <Button variant="outline" size="lg" className="group">
+                  <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  Download CV
+                </Button>
+              </a>
             </motion.div>
 
             <motion.div
