@@ -55,6 +55,8 @@ const Projects = () => {
         "Machine Learning",
         "Huawei Cloud",
         "React",
+        "Express",
+        "NodeJS",
       ],
       liveUrl: "#",
       githubUrl: "#",

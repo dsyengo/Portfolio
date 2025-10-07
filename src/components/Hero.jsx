@@ -28,7 +28,7 @@ const Hero = () => {
           >
             <div className="relative">
               <motion.div
-                className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl"
+                className="w-90 h90 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
