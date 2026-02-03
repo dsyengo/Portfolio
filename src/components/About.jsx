@@ -8,9 +8,11 @@ const About = () => {
   const highlights = [
     {
       icon: <Code className="h-6 w-6" />,
-      title: "Backend Development",
-      description: "Scalable and secure server-side solutions",
+      title: "End-to-End Engineering",
+      description:
+        "End-to-end engineering with scalability, performance, and security at the core.",
     },
+
     {
       icon: <Shield className="h-6 w-6" />,
       title: "Cybersecurity",
@@ -53,22 +55,22 @@ const About = () => {
           >
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I am a passionate backend developer and cybersecurity specialist
-                with a deep commitment to creating secure, scalable solutions.
-                My journey in technology is driven by a desire to solve complex
-                problems and protect digital ecosystems.
+                I&apos;m a Full-Stack & DevOps engineer with a passion for
+                building secure, high-performance applications.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                With expertise spanning from secure backend architectures to
-                AI/ML implementations, I bring a strategic mindset to every
-                project. My nickname "Master Chief" reflects my disciplined
-                approach and leadership qualities in both technical and creative
-                endeavors.
+                My approach combines deep technical expertise in both
+                development and cybersecurity, allowing me to identify
+                vulnerabilities early and implement security best practices from
+                the ground up.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Beyond coding, I find harmony in music as a chorister and choir
-                trainer, where I apply the same precision and creativity that
-                drives my technical work.
+                With a disciplined and strategic mindset, I specialize in
+                designing scalable microservices, performing in-depth security
+                assessments, and optimizing cloud infrastructure. I focus on
+                solving complex, high-impact challenges through resilient
+                architecture, clean system design, and security-first
+                engineering.
               </p>
             </div>
           </motion.div>

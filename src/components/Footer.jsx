@@ -93,7 +93,7 @@ const Footer = () => {
               <Heart className="h-4 w-4 text-red-500 animate-pulse" />
               <span>using</span>
               <Code className="h-4 w-4 text-primary" />
-              <span>React, Next.js & Tailwind CSS</span>
+              <span>React & Tailwind CSS</span>
             </div>
           </div>
 
