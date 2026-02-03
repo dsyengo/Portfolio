@@ -12,7 +12,8 @@ const Projects = () => {
       title: "CyberPolicy Pro",
       description:
         "A comprehensive compliance management system for businesses to track and manage cybersecurity policies, conduct risk assessments, and ensure regulatory compliance.",
-      image: "/placeholder.svg?height=200&width=400",
+      image:
+        "https://images.unsplash.com/photo-1637763723578-79a4ca9225f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9saWN5fGVufDB8fDB8fHww",
       technologies: ["Node.js", "React", "MongoDB", "Express", "JWT"],
       liveUrl: "#",
       githubUrl: "#",
@@ -22,7 +23,8 @@ const Projects = () => {
       title: "AI Health Assistant",
       description:
         "An intelligent personal health assistant powered by machine learning that provides personalized health recommendations and tracks wellness metrics.",
-      image: "/placeholder.svg?height=200&width=400",
+      image:
+        "https://plus.unsplash.com/premium_photo-1699387227274-6504f523cef3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aGVhbHRoY2FyZS1haXxlbnwwfHwwfHx8MA%3D%3D",
       technologies: [
         "Python",
         "TensorFlow",
@@ -35,20 +37,11 @@ const Projects = () => {
       featured: true,
     },
     {
-      title: "Student Clearance System",
-      description:
-        "A digital platform streamlining the student clearance process for educational institutions, reducing paperwork and improving efficiency.",
-      image: "/placeholder.svg?height=200&width=400",
-      technologies: ["MERN Stack", "Socket.io", "PDF Generation", "Email API"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
-    },
-    {
       title: "Smart Air Quality Monitor",
       description:
         "IoT-based air quality monitoring system with AI analytics, developed for Huawei ICT Competition 2024-2025.",
-      image: "/placeholder.svg?height=200&width=400",
+      image:
+        "https://images.unsplash.com/photo-1747224317356-6dd1a4a078fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWlyLXF1YWxpdHl8ZW58MHx8MHx8fDA%3D",
       technologies: [
         "IoT",
         "Python",
@@ -97,7 +90,7 @@ const Projects = () => {
               <Card className="h-full group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-background to-muted/50 overflow-hidden">
                 <div className="relative overflow-hidden">
                   <img
-                    src={project.image || "/placeholder.svg"}
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />

@@ -1,47 +1,81 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Database, Shield, Brain, Server, Cloud } from "lucide-react";
+import { Code, Database, Shield, Server, Cloud, Palette } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Backend Development",
+      title: "Backend Architecture",
       icon: <Server className="h-8 w-8" />,
-      skills: ["Node.js", "Express.js", "Python", "REST APIs", "GraphQL"],
+      skills: [
+        " JS - Node.js",
+        "Python - Django",
+        "PHP - Laravel",
+        "RESTful API Design",
+        "Microservices Architecture",
+        "Secure System Design",
+      ],
       color: "from-blue-500 to-cyan-500",
     },
     {
-      title: "Frontend Technologies",
+      title: "Frontend & Mobile Development",
       icon: <Code className="h-8 w-8" />,
-      skills: ["React", "JavaScript", "TypeScript", "Tailwind CSS", "Next.js"],
+      skills: [
+        "React",
+        "Angular",
+        "Bootstrap",
+        "Cross-Platform Applications (Flutter)",
+      ],
       color: "from-purple-500 to-pink-500",
     },
     {
-      title: "Databases",
+      title: "Databases & Data Systems",
       icon: <Database className="h-8 w-8" />,
-      skills: ["MongoDB", "MySQL", "PostgreSQL", "Redis", "Firebase"],
+      skills: [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Database Design & Optimization",
+      ],
       color: "from-green-500 to-emerald-500",
     },
     {
-      title: "Cybersecurity",
+      title: "Cybersecurity & Secure Engineering",
       icon: <Shield className="h-8 w-8" />,
       skills: [
-        "Security Auditing",
-        "Penetration Testing",
-        "OWASP",
-        "Encryption",
-        "Compliance",
+        "Secure SDLC Implementation",
+        "Vulnerability Assessment",
+        "Identity & Access Management (IAM)",
+        "Encryption & Data Protection",
       ],
       color: "from-red-500 to-orange-500",
     },
     {
-      title: "DevOps & Tools",
+      title: "DevOps & Cloud Engineering",
       icon: <Cloud className="h-8 w-8" />,
-      skills: ["Docker", "AWS", "Git", "CI/CD", "Linux"],
+      skills: [
+        "Docker",
+        "CI/CD Pipelines",
+        "Linux Administration",
+        "Cloud Deployment (AWS)",
+        "Automation & Monitoring",
+      ],
       color: "from-yellow-500 to-orange-500",
+    },
+    {
+      title: "Product & Design",
+      icon: <Palette className="h-8 w-8" />,
+      skills: [
+        "UI/UX Design (Figma)",
+        "System Design",
+        "Requirements Analysis",
+        "Technical Documentation",
+        "Agile Collaboration",
+      ],
+      color: "from-indigo-500 to-blue-500",
     },
   ];
 

@@ -81,7 +81,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              Secure Software Developer
+              Full-Stack, DevOps & Cybersecurity Specialist
             </motion.div>
 
             <motion.p
@@ -90,11 +90,13 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              Nicknamed{" "}
-              <span className="text-primary font-semibold">"Master Chief"</span>{" "}
-              for my disciplined and strategic approach. I specialize in secure
-              backend development, cybersecurity, and AI-driven solutions,
-              bringing precision and purpose to every project.
+              Software Engineer and Cybersecurity Specialist with full-stack
+              expertise in building secure, scalable, and resilient systems.
+              Experienced in backend architecture, cross-platform applications,
+              and integrating security throughout the development lifecycle.
+              DevOps-inclined, with a focus on automation, reliability, and
+              performance. Passionate about leveraging AI to enhance efficiency,
+              security, and intelligent digital solutions.
             </motion.p>
 
             <motion.div
@@ -107,10 +109,7 @@ const Hero = () => {
                 <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                 Get In Touch
               </Button>
-              <a
-                href="/assets/DENIS SYENGO CV.pdf"
-                download="DENIS_SYENGO_CV.pdf"
-              >
+              <a href="/assets/dean_cv.pdf" download="dean_cv.pdf">
                 <Button variant="outline" size="lg" className="group">
                   <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                   Download CV

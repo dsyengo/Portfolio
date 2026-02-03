@@ -60,8 +60,8 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to collaborate on your next project? Let's discuss how we can
-            build something amazing together.
+            Ready to collaborate on your next project? Let&apos;s discuss how we
+            can build something amazing together.
           </p>
         </motion.div>
 

@@ -26,13 +26,31 @@ const Achievements = () => {
       color: "from-blue-500 to-cyan-500",
     },
     {
-      title: "National Hackathon Winner 2022",
+      title: "Creating Compelling Reports – Cisco Networking Academy",
       description:
-        "Developed a comprehensive cybersecurity solution that secured 1st place in a national hackathon, demonstrating innovation in digital security.",
-      year: "2022",
-      icon: <Award className="h-6 w-6" />,
-      type: "Competition",
-      color: "from-purple-500 to-pink-500",
+        "Developed professional report-writing skills focused on structuring technical content, presenting data clearly, and communicating insights effectively for business and IT environments.",
+      year: "2026",
+      icon: <Certificate className="h-6 w-6" />,
+      type: "Certification",
+      color: "from-green-500 to-emerald-500",
+    },
+    {
+      title: "Digital Awareness – Cisco Networking Academy",
+      description:
+        "Gained foundational knowledge in digital literacy, online safety, data privacy, and responsible technology use, strengthening awareness of cybersecurity risks in modern digital environments.",
+      year: "2026",
+      icon: <Certificate className="h-6 w-6" />,
+      type: "Certification",
+      color: "from-purple-500 to-indigo-500",
+    },
+    {
+      title: "English for IT – Cisco Networking Academy",
+      description:
+        "Enhanced professional English communication skills tailored for IT, including technical vocabulary, documentation writing, and effective collaboration in global technology teams.",
+      year: "2026",
+      icon: <Certificate className="h-6 w-6" />,
+      type: "Certification",
+      color: "from-orange-500 to-yellow-500",
     },
   ];
 
@@ -44,12 +62,12 @@ const Achievements = () => {
     },
     {
       label: "Projects Completed",
-      value: "15+",
+      value: "10+",
       icon: <Trophy className="h-5 w-5" />,
     },
     {
       label: "Certifications",
-      value: "5+",
+      value: "4+",
       icon: <Certificate className="h-5 w-5" />,
     },
     { label: "Awards Won", value: "3", icon: <Award className="h-5 w-5" /> },
