@@ -81,7 +81,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              Full-Stack, DevOps & Cybersecurity Specialist
+              Full-Stack Developer & DevOps Engineer
             </motion.div>
 
             <motion.p
