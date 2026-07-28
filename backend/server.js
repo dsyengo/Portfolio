@@ -17,12 +17,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Enable CORS
+
+const allowedOrigins =
+  process.env.NODE_ENV === "production"
+    ? process.env.CLIENT_URL
+      ? process.env.CLIENT_URL.replace(/\/$/, "")
+      : "https://denissyengo.netlify.app"
+    : "http://localhost:5173";
 app.use(
   cors({
-    origin:
-      process.env.NODE_ENV === "production"
-        ? process.env.CLIENT_URL
-        : "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true,
   }),
 );
