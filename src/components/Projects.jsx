@@ -5,57 +5,10 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import { usePublicData } from "../hooks/usePublicData";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "CyberPolicy Pro",
-      description:
-        "A comprehensive compliance management system for businesses to track and manage cybersecurity policies, conduct risk assessments, and ensure regulatory compliance.",
-      image:
-        "https://images.unsplash.com/photo-1637763723578-79a4ca9225f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9saWN5fGVufDB8fDB8fHww",
-      technologies: ["Node.js", "React", "MongoDB", "Express", "JWT"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true,
-    },
-    {
-      title: "AI Health Assistant",
-      description:
-        "An intelligent personal health assistant powered by machine learning that provides personalized health recommendations and tracks wellness metrics.",
-      image:
-        "https://plus.unsplash.com/premium_photo-1699387227274-6504f523cef3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aGVhbHRoY2FyZS1haXxlbnwwfHwwfHx8MA%3D%3D",
-      technologies: [
-        "Python",
-        "TensorFlow",
-        "React Native",
-        "FastAPI",
-        "PostgreSQL",
-      ],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true,
-    },
-    {
-      title: "Smart Air Quality Monitor",
-      description:
-        "IoT-based air quality monitoring system with AI analytics, developed for Huawei ICT Competition 2024-2025.",
-      image:
-        "https://images.unsplash.com/photo-1747224317356-6dd1a4a078fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWlyLXF1YWxpdHl8ZW58MHx8MHx8fDA%3D",
-      technologies: [
-        "IoT",
-        "Python",
-        "Machine Learning",
-        "Huawei Cloud",
-        "React",
-        "Express",
-        "NodeJS",
-      ],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true,
-    },
-  ];
+  const { data: projects, loading } = usePublicData("/projects");
 
   return (
     <section id="projects" className="py-20 bg-muted/30">
@@ -72,97 +25,95 @@ const Projects = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my work in secure development, AI/ML, and innovative
-            solutions
+            A showcase of my work in secure development, AI/ML, and innovative solutions
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={project.featured ? "lg:col-span-1" : "lg:col-span-1"}
-            >
-              <Card className="h-full group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-background to-muted/50 overflow-hidden">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {project.featured && (
-                    <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
-                      Featured
-                    </Badge>
+        {loading ? (
+          <div className="grid lg:grid-cols-2 gap-8">
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="h-72 rounded-xl bg-muted/50 animate-pulse" />
+            ))}
+          </div>
+        ) : projects.length === 0 ? (
+          <p className="text-center text-muted-foreground">No projects yet.</p>
+        ) : (
+          <div className="grid lg:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project._id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-background to-muted/50 overflow-hidden">
+                  {project.image && (
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      {project.featured && (
+                        <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
+                          Featured
+                        </Badge>
+                      )}
+                    </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
 
-                <CardHeader>
-                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-200">
-                    {project.title}
-                  </h3>
-                </CardHeader>
+                  <CardHeader>
+                    <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-200">
+                      {project.title}
+                    </h3>
+                  </CardHeader>
 
-                <CardContent className="flex-1">
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
+                  <CardContent className="flex-1">
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies?.map((tech, i) => (
+                        <Badge key={i} variant="secondary" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
 
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <Badge
-                        key={techIndex}
-                        variant="secondary"
-                        className="text-xs"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-
-                <CardFooter className="flex justify-between items-center pt-6">
-                  <div className="flex space-x-2">
-                    <Button size="sm" variant="outline" className="group/btn">
-                      <Github className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      Code
-                    </Button>
-                    <Button size="sm" className="group/btn">
-                      <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      Live Demo
-                    </Button>
-                  </div>
-
-                  <motion.div
-                    className="text-primary"
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <ArrowRight className="h-5 w-5" />
-                  </motion.div>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div
-          className="text-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <Button variant="outline" size="lg" className="group">
-            View All Projects
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </motion.div>
+                  <CardFooter className="flex justify-between items-center pt-6">
+                    <div className="flex space-x-2">
+                      {project.githubUrl && project.githubUrl !== "#" && (
+                        <a href={project.githubUrl} target="_blank" rel="noreferrer">
+                          <Button size="sm" variant="outline" className="group/btn">
+                            <Github className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                            Code
+                          </Button>
+                        </a>
+                      )}
+                      {project.liveUrl && project.liveUrl !== "#" && (
+                        <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                          <Button size="sm" className="group/btn">
+                            <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                            Live Demo
+                          </Button>
+                        </a>
+                      )}
+                    </div>
+                    <motion.div
+                      className="text-primary"
+                      whileHover={{ x: 5 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <ArrowRight className="h-5 w-5" />
+                    </motion.div>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

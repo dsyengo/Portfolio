@@ -1,14 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Linkedin, Github } from "lucide-react";
+import { toast } from "sonner";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
+import api from "../lib/api";
 
 const Contact = () => {
+  const [busy, setBusy] = useState(false);
+
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
@@ -45,6 +50,27 @@ const Contact = () => {
     },
   ];
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const payload = {
+      name: form.name.value,
+      email: form.email.value,
+      subject: form.subject.value,
+      message: form.message.value,
+    };
+    setBusy(true);
+    try {
+      await api.post("/messages", payload);
+      toast.success("Message sent! I'll get back to you soon.");
+      form.reset();
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Failed to send message");
+    } finally {
+      setBusy(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -66,7 +92,6 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -75,9 +100,7 @@ const Contact = () => {
           >
             <Card className="border-0 bg-gradient-to-br from-background to-muted/50">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">
-                  Let's Connect
-                </CardTitle>
+                <CardTitle className="text-2xl font-bold">Let's Connect</CardTitle>
                 <p className="text-muted-foreground">
                   I'm always open to discussing new opportunities, interesting
                   projects, or just having a chat about technology.
@@ -129,7 +152,6 @@ const Contact = () => {
             </Card>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -138,20 +160,13 @@ const Contact = () => {
           >
             <Card className="border-0 bg-gradient-to-br from-background to-muted/50">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">
-                  Send a Message
-                </CardTitle>
+                <CardTitle className="text-2xl font-bold">Send a Message</CardTitle>
                 <p className="text-muted-foreground">
-                  Fill out the form below and I'll get back to you as soon as
-                  possible.
+                  Fill out the form below and I'll get back to you as soon as possible.
                 </p>
               </CardHeader>
               <CardContent>
-                <form
-                  className="space-y-6"
-                  action="https://formspree.io/f/{your-endpoint}"
-                  method="POST"
-                >
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name</Label>
@@ -199,13 +214,10 @@ const Contact = () => {
                     />
                   </div>
 
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Button type="submit" size="lg" className="w-full group">
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                    <Button type="submit" size="lg" className="w-full group" disabled={busy}>
                       <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      Send Message
+                      {busy ? "Sending..." : "Send Message"}
                     </Button>
                   </motion.div>
                 </form>
